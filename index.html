@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Touch Event - Location Vaisselle & Décoration Table Haut de Gamme</title>
+    <meta name="description" content="Fresh Touch Event par Marceline AYITE - Location de vaisselle, couverts et décoration de table sur mesure pour vos événements d'exception.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --creme: #FAF7F2;
+            --beige: #C9A86A;
+            --blanc-casse: #FFFEF9;
+            --dore: #C9A86A;
+            --vert-sauge: #5F8575;
+            --text-dark: #2C2C2C;
+            --rose-pale: #F8E9E9;
+            --rose-dore: #E8C4C4;
+            --gold: #C9A86A;
+            --amethyst: #D4AF37;
+            --sage: #A8B5A0;
+            --dark: #2C2C2C;
+            --white: #FDF8F2;
+            --cream: #FAF7F2;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                rgba(139, 95, 191, 0.3), 
+                transparent 30%
+            );
+            animation: rotate 6s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.95rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .nav-center span {
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 400;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a.active {
+            color: var(--amethyst);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::before {
+            width: 100%;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--amethyst), var(--gold));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--amethyst);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 10px rgba(139, 95, 191, 0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.7s ease;
+        }
+
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+
+        .cta-btn:hover {
+            background: linear-gradient(135deg, var(--Vert eucalyptus), #5F8575);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--dark);
+            transition: 0.3s;
+        }
+
+        /* Page Container */
+        .page-container {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page-container.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: 
+                linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--white);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.7s ease;
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-cta:hover {
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 95, 191, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--sage);
+            font-style: italic;
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: linear-gradient(135deg, var(--rose-pale) 0%, var(--blanc-casse) 100%);
+            text-align: center;
+            padding: 4rem 5%;
+            position: relative;
+        }
+
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .philosophy > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--amethyst);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .philosophy-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .service-item {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 95, 191, 0.2);
+            border-left-color: var(--amethyst);
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--amethyst);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .service-item h3 i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .service-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-item li {
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-item li::before {
+            content: "•";
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .why-choose-us {
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(139, 95, 191, 0.3);
+        }
+
+        .why-choose-us h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .why-item i {
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-top: 0.2rem;
+        }
+
+        .why-item p {
+            margin: 0;
+        }
+
+        /* Services Preview Section */
+        .services-preview {
+            background: var(--white);
+            padding: 4rem 5%;
+        }
+
+        .services-grid-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-preview-item {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--gold);
+        }
+
+        .service-preview-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 95, 191, 0.2);
+            border-left-color: var(--amethyst);
+        }
+
+        .service-preview-item i {
+            font-size: 3rem;
+            color: var(--amethyst);
+            margin-bottom: 1rem;
+        }
+
+        .service-preview-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-preview-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Réalisations Section */
+        .realisations {
+            background: var(--cream);
+        }
+
+        .realisations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .realisation-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+
+        .realisation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(139, 95, 191, 0.3);
+        }
+
+        .realisation-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .realisation-header i {
+            font-size: 1.8rem;
+        }
+
+        .realisation-header h3 {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .realisation-content {
+            padding: 1.5rem;
+        }
+
+        .realisation-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .realisation-detail i {
+            color: var(--amethyst);
+            margin-top: 0.2rem;
+            font-size: 1.1rem;
+        }
+
+        .realisation-detail strong {
+            color: var(--dark);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .realisation-testimonial {
+            background: var(--cream);
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--gold);
+            font-style: italic;
+        }
+
+        .realisation-testimonial::before {
+            content: """;
+            font-size: 2rem;
+            color: var(--gold);
+            line-height: 1;
+            margin-right: 0.5rem;
+        }
+
+        /* Gallery Section - AMÉLIORÉE avec filtres */
+        .gallery {
+            background: var(--white);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--cream);
+            border: 2px solid var(--gold);
+            color: var(--dark);
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            border-color: var(--amethyst);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 95, 191, 0.3);
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(44, 44, 44, 0.8));
+            padding: 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Gallery d'accueil - NOUVELLE SECTION */
+        .home-gallery {
+            background: var(--cream);
+            padding: 4rem 5%;
+        }
+
+        .home-gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .home-gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 1/1;
+        }
+
+        .home-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            padding: 4rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(139, 95, 191, 0.1) 0%,
+                transparent 70%
+            );
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .testimonial-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        /* About Section - AMÉLIORÉE avec photo réelle */
+        .about {
+            background: linear-gradient(135deg, var(--rose-pale) 0%, var(--blanc-casse) 100%);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background-image: url('http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/image_2025-10-23_081919985.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(139, 95, 191, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 95, 191, 0.1), rgba(201, 168, 106, 0.1));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .about-image:hover::before {
+            opacity: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-intro {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .about-quote {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--amethyst);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            text-align: center;
+            padding: 1.5rem;
+            border-left: 4px solid var(--gold);
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+
+        .about-highlight {
+            color: var(--amethyst);
+            font-weight: 600;
+        }
+
+        .about-section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .about-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--amethyst);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-section h3 i {
+            color: var(--gold);
+        }
+
+        .about-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-item {
+            background: var(--cream);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .values-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .values-list li {
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .values-list li::before {
+            content: "✦";
+            color: var(--amethyst);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .values-list li:hover::before {
+            color: var(--gold);
+            transform: scale(1.2) rotate(15deg);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-header {
+            margin-bottom: 2rem;
+        }
+
+        .contact-header h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-top {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info-item {
+            font-size: 1.1rem;
+            color: var(--amethyst);
+            font-weight: 500;
+        }
+
+        /* Price Modal */
+        .price-modal-btn {
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(139, 95, 191, 0.3);
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-modal-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.7s ease;
+        }
+
+        .price-modal-btn:hover::before {
+            left: 100%;
+        }
+
+        .price-modal-btn:hover {
+            background: linear-gradient(135deg, var(--dark), #1a1a1a);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: var(--white);
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: modalFadeIn 0.5s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--cream);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--amethyst);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .price-table th, .price-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--cream);
+        }
+
+        .price-table th {
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .price-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .price-table tr:hover {
+            background: rgba(139, 95, 191, 0.1);
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-method {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 95, 191, 0.2);
+        }
+
+        .contact-method h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--amethyst);
+        }
+
+        .contact-method p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #1a1a1a);
+            color: var(--cream);
+            padding: 4rem 5% 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-brand {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--beige);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: var(--amethyst);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: var(--cream);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+            background: linear-gradient(135deg, var(--amethyst), var(--gold));
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(139, 95, 191, 0.4);
+        }
+
+        .footer-copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(232, 220, 196, 0.2);
+            color: var(--beige);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-center {
+                display: none;
+            }
+            
+            .services-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .realisations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid-preview {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            .price-table {
+                font-size: 0.9rem;
+            }
+
+            .price-table th, .price-table td {
+                padding: 0.7rem;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+            
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .about-quote {
+                font-size: 1.5rem;
+            }
+
+            .about-services {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-item h3 {
+                font-size: 1.2rem;
+            }
+            
+            .realisation-header {
+                padding: 1rem;
+            }
+            
+            .realisation-header h3 {
+                font-size: 1.1rem;
+            }
+            
+            .realisation-content {
+                padding: 1rem;
+            }
+            
+            .why-choose-us {
+                padding: 1.5rem;
+            }
+            
+            .why-item {
+                padding: 0.8rem;
+            }
+            
+            .home-gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            
+            .services-grid-preview {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .service-preview-item {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .services-container {
+                gap: 1.5rem;
+            }
+            
+            .service-item {
+                padding: 1rem;
+            }
+            
+            .realisation-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-info-top {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-brand h3 {
+                font-size: 1.5rem;
+            }
+            
+            .home-gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 400px;
+            }
+            
+            .service-preview-item i {
+                font-size: 2.5rem;
+            }
+            .price-table th, .price-table td {
+                padding: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo" onclick="navigateTo('accueil')">
+                <div class="logo-icon">✦</div>
+                Fresh Touch Event
+            </div>
+            <div class="nav-center">
+                <span>📞</span>
+                <span>00228 91 97 95 14</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a class="nav-link active" data-page="accueil">Accueil</a></li>
+                <li><a class="nav-link" data-page="services">Nos Services</a></li>
+                <li><a class="nav-link" data-page="realisations">Nos Réalisations</a></li>
+                <li><a class="nav-link" data-page="gallery">Galerie</a></li>
+                <li><a class="nav-link" data-page="about">À Propos</a></li>
+                <li><a class="cta-btn nav-link" data-page="contact">Contactez-nous</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Container - Accueil -->
+    <div id="page-accueil" class="page-container active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Fresh Touch Event - Votre Élégance de Table</h1>
+                <p>Location de vaisselle, couverts et décoration de table haut de gamme pour vos événements d'exception</p>
+                <a class="hero-cta" onclick="navigateTo('gallery')">Découvrir notre Galerie</a>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy">
+            <p class="quote">"Présentation – Fresh Touch Event."</p>
+            <div class="philosophy-text">
+                <p>L'art de recevoir, sublimé.</p>
+                <p>Chez Fresh Touch Event, chaque table est une scène, chaque détail une émotion. Basée à Lomé, notre entreprise est spécialisée dans la location de vaisselle, couverts, linge de table et décoration événementielle. Nous accompagnons particuliers et professionnels dans la création d'ambiances élégantes, chaleureuses et inoubliables.</p>
+                <p>Que ce soit pour un mariage intimiste, un dîner d'entreprise ou une célébration familiale, nous croyons que la beauté se cache dans les détails. Notre mission: transformer vos événements en expériences sensorielles, où chaque invité se sent attendu, choyé, émerveillé.</p>
+            </div>
+        </section>
+
+        <!-- Gallery d'accueil -->
+        <section class="home-gallery">
+            <h2 class="section-title">Quelques Réalisations</h2>
+            <p class="section-subtitle">Un aperçu de notre univers créatif</p>
+            
+            <div class="home-gallery-container">
+                <div class="home-gallery-item">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/ChatGPT-Image-Oct-23-2025-09_50_42-AM.png" alt="Table élégante">
+                </div>
+                <div class="home-gallery-item">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.15.jpeg" alt="Couverts dorés">
+                </div>
+                <div class="home-gallery-item">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.38.jpeg" alt="Composition florale">
+                </div>
+                <div class="home-gallery-item">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.51.47-1.jpeg" alt="Décoration complète">
+                </div>
+                <div class="home-gallery-item">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.16-1.jpeg" alt="Décoration complète">
+                </div>
+                <div class="home-gallery-item">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.51.47.jpeg" alt="Décoration complète">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a class="cta-btn" onclick="navigateTo('gallery')">Voir toute notre galerie</a>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="services-preview">
+            <h2 class="section-title">Nos Domaines d'Expertise</h2>
+            <p class="section-subtitle">Découvrez nos spécialités pour sublimer vos événements</p>
+            
+            <div class="services-grid-preview">
+                <div class="service-preview-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Vaisselle Élégante</h3>
+                    <p>Assiettes raffinées, verrerie cristalline et couverts premium pour une table d'exception</p>
+                </div>
+                <div class="service-preview-item">
+                    <i class="fas fa-table"></i>
+                    <h3>Linge de Table</h3>
+                    <p>Nappes en lin, chemins de table et serviettes en tissu pour une élégance authentique</p>
+                </div>
+                <div class="service-preview-item">
+                    <i class="fas fa-palette"></i>
+                    <h3>Décoration Sur Mesure</h3>
+                    <p>Création d'ambiances uniques avec centres de table et éléments décoratifs raffinés</p>
+                </div>
+                <div class="service-preview-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Conseil Personnalisé</h3>
+                    <p>Accompagnement expert pour harmoniser couleurs, styles et ambiances</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a class="cta-btn" onclick="navigateTo('services')">Découvrir tous nos services</a>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="testimonial">
+            <div class="testimonial-content">
+                <p class="testimonial-text">"Un service impeccable et des couverts magnifiques ! Notre mariage a été embelli par leurs touches élégantes. Marceline a su comprendre notre vision et l'a sublimée."</p>
+                <p class="testimonial-author">— Laeticia GAGNO</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page Container - Services -->
+    <div id="page-services" class="page-container">
+        <section class="services">
+            <h2 class="section-title">Nos Services Complets</h2>
+            <p class="section-subtitle">Une gamme exhaustive pour transformer vos événements en moments inoubliables</p>
+            
+            <div class="services-container">
+                <div class="services-list">
+                    <div class="service-item">
+                        <h3><i class="fas fa-utensils"></i> Location de vaisselle haut de gamme</h3>
+                        <ul>
+                            <li>Assiettes élégantes et raffinées</li>
+                            <li>Verrerie cristalline étincelante</li>
+                            <li>Couverts en finition dorée et argentée</li>
+                            <li>Accessoires de service premium</li>
+                            <li>Plateaux et présentoirs design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3><i class="fas fa-table"></i> Linge de table raffiné</h3>
+                        <ul>
+                            <li>Nappes en lin et coton de qualité</li>
+                            <li>Chemins de table sur mesure</li>
+                            <li>Serviettes en tissu premium</li>
+                            <li>Sets de table personnalisés</li>
+                            <li>Napperons et sous-verres élégants</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3><i class="fas fa-palette"></i> Décoration de table</h3>
+                        <ul>
+                            <li>Bougeoirs et chandeliers élégants</li>
+                            <li>Centres de table floraux et modernes</li>
+                            <li>Vases et compositions artistiques</li>
+                            <li>Éléments décoratifs thématiques</li>
+                            <li>Supports et présentoirs créatifs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3><i class="fas fa-lightbulb"></i> Conseil en mise en scène</h3>
+                        <ul>
+                            <li>Harmonisation des couleurs et styles</li>
+                            <li>Création d'ambiances sur mesure</li>
+                            <li>Conseils en design de table</li>
+                            <li>Accompagnement personnalisé</li>
+                            <li>Planification et coordination</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="why-choose-us">
+                    <h3>Pourquoi choisir Fresh Touch Event?</h3>
+                    
+                    <div class="why-item">
+                        <i class="fas fa-star"></i>
+                        <p><strong>Un service sur mesure</strong><br>Chaque événement est unique, chaque détail compte. Nous créons des expériences personnalisées qui reflètent votre style.</p>
+                    </div>
+                    
+                    <div class="why-item">
+                        <i class="fas fa-gem"></i>
+                        <p><strong>Des articles sélectionnés avec soin</strong><br>Qualité, élégance et hygiène irréprochable. Chaque pièce est choisie pour son raffinement et sa durabilité.</p>
+                    </div>
+                    
+                    <div class="why-item">
+                        <i class="fas fa-heart"></i>
+                        <p><strong>Une équipe passionnée</strong><br>À l'écoute, créative et réactive. Nous mettons tout en œuvre pour transformer votre vision en réalité.</p>
+                    </div>
+                    
+                    <div class="why-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <p><strong>Fiabilité et professionnalisme</strong><br>Ponctualité, rigueur et respect des engagements pour une prestation sans souci.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page Container - Réalisations -->
+    <div id="page-realisations" class="page-container">
+        <section class="realisations">
+            <h2 class="section-title">Nos Réalisations</h2>
+            <p class="section-subtitle">Découvrez comment nous avons sublimé ces événements exceptionnels</p>
+            
+            <div class="realisations-grid">
+                <div class="realisation-card">
+                    <div class="realisation-header">
+                        <i class="fas fa-glass-cheers"></i>
+                        <h3>Mariage champêtre à Baguida</h3>
+                    </div>
+                    <div class="realisation-content">
+                        <div class="realisation-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Lieu</strong>
+                                <p>Jardin privé – 120 invités</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-detail">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <strong>Ambiance</strong>
+                                <p>Bohème chic, tons ivoire et eucalyptus</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-detail">
+                            <i class="fas fa-list"></i>
+                            <div>
+                                <strong>Éléments loués</strong>
+                                <p>Vaisselle vintage, couverts dorés, nappes en lin naturel, chandeliers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-testimonial">
+                            "Une table digne d'un conte de fées. Merci pour votre écoute et votre goût exquis."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="realisation-card">
+                    <div class="realisation-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Cocktail d'entreprise – Lomé Business Center</h3>
+                    </div>
+                    <div class="realisation-content">
+                        <div class="realisation-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Lieu</strong>
+                                <p>Rooftop – 80 invités</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-detail">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <strong>Ambiance</strong>
+                                <p>Moderne et épurée, noir & or</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-detail">
+                            <i class="fas fa-list"></i>
+                            <div>
+                                <strong>Éléments loués</strong>
+                                <p>Verres à cocktail, assiettes ardoise, serviettes satinées, bougies LED</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-testimonial">
+                            "Professionnalisme, ponctualité et élégance. Nos invités étaient bluffés."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="realisation-card">
+                    <div class="realisation-header">
+                        <i class="fas fa-birthday-cake"></i>
+                        <h3>Anniversaire privé – Résidence à Agoè</h3>
+                    </div>
+                    <div class="realisation-content">
+                        <div class="realisation-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Lieu</strong>
+                                <p>Terrasse familiale – 30 invités</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-detail">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <strong>Ambiance</strong>
+                                <p>Colorée et conviviale</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-detail">
+                            <i class="fas fa-list"></i>
+                            <div>
+                                <strong>Éléments loués</strong>
+                                <p>Assiettes pastel, chemins de table fleuris, vaisselle enfantine</p>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-testimonial">
+                            "Vous avez transformé notre jardin en un lieu magique. Merci pour cette touche unique."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page Container - Galerie -->
+    <div id="page-gallery" class="page-container">
+        <section class="gallery">
+            <h2 class="section-title">Notre Galerie Complète</h2>
+            <p class="section-subtitle">Explorez nos plus belles réalisations par catégorie</p>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('all')">Tous</button>
+                <button class="filter-btn" onclick="filterGallery('mariage')">Mariage</button>
+                <button class="filter-btn" onclick="filterGallery('gala')">Dîner de Gala</button>
+                <button class="filter-btn" onclick="filterGallery('boheme')">Bohème</button>
+                <button class="filter-btn" onclick="filterGallery('moderne')">Moderne</button>
+                <button class="filter-btn" onclick="filterGallery('classique')">Classique</button>
+            </div>
+            
+            <div class="gallery-container">
+                <!-- Vidéo principale -->
+                <div class="gallery-item" data-category="all">
+                    <video muted>
+                        <source src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Video-2025-10-22-at-07.52.15.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                    <div class="gallery-overlay">
+                        <h4>Vidéo de Présentation</h4>
+                        <p>Découvrez notre univers en vidéo</p>
+                    </div>
+                </div>
+                
+                <!-- Images de mariage -->
+                <div class="gallery-item" data-category="mariage">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/1761424276499.jpg" alt="Table de mariage élégante">
+                    <div class="gallery-overlay">
+                        <h4>Table de Mariage</h4>
+                        <p>Décoration raffinée pour mariage prestigieux</p>
+                    </div>
+                </div>
+                
+                <!-- Images de dîner de gala -->
+                <div class="gallery-item" data-category="gala">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/1761425676264.jpg" alt="Serviettes de table">
+                    <div class="gallery-overlay">
+                        <h4>Dîner de Gala</h4>
+                        <p>Élégance et sophistication pour événements prestigieux</p>
+                    </div>
+                </div>
+                
+                <!-- Images de couverts dorés - classique -->
+                <div class="gallery-item" data-category="classique">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/1761424839300.jpg" alt="Couverts dorés">
+                    <div class="gallery-overlay">
+                        <h4>Style Classique</h4>
+                        <p>Service en finition or pour événements prestigieux</p>
+                    </div>
+                </div>
+                
+                <!-- Images de fleurs fraîches - bohème -->
+                <div class="gallery-item" data-category="boheme">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.38-2.jpeg" alt="Compositions florales">
+                    <div class="gallery-overlay">
+                        <h4>Style Bohème</h4>
+                        <p>Fleurs fraîches et ambiance naturelle</p>
+                    </div>
+                </div>
+                
+                <!-- Image moderne -->
+                <div class="gallery-item" data-category="moderne">
+                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/1761424785649.jpg" alt="Décoration de table">
+                    <div class="gallery-overlay">
+                        <h4>Style Moderne</h4>
+                        <p>Lignes épurées et design contemporain</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page Container - À Propos -->
+    <div id="page-about" class="page-container">
+        <section class="about">
+            <h2 class="section-title">À Propos de Marceline AYITE</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- Photo de Marceline ajoutée ici avec le lien fourni -->
+                </div>
+                <div class="about-text">
+                    <div class="about-intro">
+                        <p class="about-quote">"Chaque table mérite sa propre poésie."</p>
+                        <p>Je m'appelle <span class="about-highlight">Marceline AYITE</span>, fondatrice de <span class="about-highlight">Fresh Touch Event</span>, une entreprise née d'un amour profond pour l'art de recevoir et la beauté des détails. Depuis toujours, j'ai été fascinée par les ambiances chaleureuses, les tables soigneusement dressées, et les sourires que provoque une décoration bien pensée.</p>
+                        <p>Fresh Touch Event est bien plus qu'un service de location de couverts — c'est une invitation à célébrer avec style, à transformer chaque repas en moment mémorable, et à faire de chaque événement une œuvre d'art.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-seedling"></i> Mon histoire</h3>
+                        <p>Tout a commencé à Lomé, lors d'un dîner que j'avais organisé pour ma famille. J'avais mis tout mon cœur dans la décoration de la table: des couverts dorés, des serviettes en lin, quelques fleurs fraîches… et ce soir-là, j'ai vu des étoiles dans les yeux de mes invités. Ce moment m'a révélée.</p>
+                        <p>J'ai compris que <span class="about-highlight">l'élégance pouvait être partagée</span>, et que j'avais le pouvoir d'en faire mon métier. C'est ainsi qu'est né Fresh Touch Event — avec une mission simple: <span class="about-highlight">offrir aux autres ce que j'aime créer</span>.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-gem"></i> Ce que je propose</h3>
+                        <div class="about-services">
+                            <div class="service-item">
+                                <strong>Location de couverts et vaisselle haut de gamme</strong>
+                            </div>
+                            <div class="service-item">
+                                <strong>Décoration de table sur mesure</strong>
+                            </div>
+                            <div class="service-item">
+                                <strong>Conseils personnalisés pour vos événements</strong>
+                            </div>
+                            <div class="service-item">
+                                <strong>Ambiances élégantes, bohèmes ou modernes selon vos envies</strong>
+                            </div>
+                        </div>
+                        <p>Chaque prestation est pensée avec soin, chaque détail est choisi avec amour. Mon objectif: que vous vous sentiez fier(e) de recevoir, et que vos invités se souviennent de votre table autant que de votre sourire.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-heart"></i> Ma philosophie</h3>
+                        <p>Chez Fresh Touch Event, <span class="about-highlight">l'élégance est accessible</span>, <span class="about-highlight">la beauté est intentionnelle</span>, et <span class="about-highlight">chaque client est unique</span>. Je crois que les plus beaux souvenirs naissent autour d'une table, et je suis là pour les sublimer.</p>
+                        <ul class="values-list">
+                            <li>L'élégance est accessible à tous</li>
+                            <li>La beauté naît de l'intentionnalité</li>
+                            <li>Chaque client mérite une expérience unique</li>
+                            <li>L'excellence est dans les détails</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page Container - Contact -->
+    <div id="page-contact" class="page-container">
+        <section class="contact">
+            <div class="contact-header">
+                <h2>FRESH TOUCH EVENT</h2>
+                <p class="subtitle">LOCATION DE COUVERTS & DÉCORATION DE TABLE HAUT DE GAMME</p>
+            </div>
+            
+            <div class="contact-info-top">
+                <div class="contact-info-item">📞 00228 91 97 95 14</div>
+                <div class="contact-info-item">📧 freshtouch@gmail.com</div>
+                <div class="contact-info-item">📍 Lomé, Togo</div>
+            </div>
+
+            <!-- Bouton pour ouvrir la boîte de dialogue des prix -->
+            <button class="price-modal-btn" onclick="openPriceModal()">Voir nos Prix de Location</button>
+        </section>
+
+        <!-- Contact Info Section -->
+        <section class="contact-info">
+            <h2 class="section-title">Comment Nous Contacter</h2>
+            <p class="section-subtitle">Plusieurs façons de nous joindre pour discuter de votre projet</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>📞 Par Téléphone</h3>
+                    <p><strong>00228 91 97 95 14</strong></p>
+                    <p>Du lundi au samedi</p>
+                    <p>8h00 - 20h00</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h3>📧 Par Email</h3>
+                    <p><strong>freshtouch@gmail.com</strong></p>
+                    <p>Réponse sous 24h</p>
+                    <p>Devis personnalisé gratuit</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h3>💬 Sur les Réseaux</h3>
+                    <p><strong>Instagram & Facebook</strong></p>
+                    <p>@freshtouchevent</p>
+                    <p>Messages directs</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h3>📍 En Personne</h3>
+                    <p><strong>Sur rendez-vous</strong></p>
+                    <p>Lomé, Togo</p>
+                    <p>Sans frais</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal pour les prix -->
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nos Tarifs de Location</h3>
+                <button class="close-modal" onclick="closePriceModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Découvrez nos tarifs pour la location de vaisselle, couverts et décoration de table. Tous nos prix sont indiqués pour une journée de location.</p>
+                
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>DESIGNATIONS</th>
+                            <th>PRIX UNITAIRE</th>
+                            <th>PRIX EN CAS DE CASSE/PERTE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nappe blanche pour table ronde</td>
+                            <td>2 000 F</td>
+                            <td>10 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>Nappe blanche pour table rectangulaire</td>
+                            <td>1 500 F</td>
+                            <td>8 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>Napperon (couleur bleu et vert)</td>
+                            <td>200 F</td>
+                            <td>1 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>Couteaux</td>
+                            <td>100 F</td>
+                            <td>500 F</td>
+                        </tr>
+                        <tr>
+                            <td>Fourchette</td>
+                            <td>100 F</td>
+                            <td>500 F</td>
+                        </tr>
+                        <tr>
+                            <td>Cuillère</td>
+                            <td>100 F</td>
+                            <td>500 F</td>
+                        </tr>
+                        <tr>
+                            <td>Assiette à bordure dorée - entrée</td>
+                            <td>150 F</td>
+                            <td>1 200 F</td>
+                        </tr>
+                        <tr>
+                            <td>Assiette à bordure dorée - résistance</td>
+                            <td>150 F</td>
+                            <td>1 500 F</td>
+                        </tr>
+                        <tr>
+                            <td>Décoration de table - rose de fleur</td>
+                            <td>2 000 F</td>
+                            <td>10 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>Décoration de table - pot de fleur</td>
+                            <td>2 000 F</td>
+                            <td>3 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>Table de 08 personnes</td>
+                            <td>1 500 F</td>
+                            <td>35 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>Chafindish</td>
+                            <td>2 000 F</td>
+                            <td>20 000 F</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--cream); border-radius: 10px;">
+                    <p style="font-style: italic; margin-bottom: 1rem;"><strong>Note :</strong> Pour la location de matériels, une caution est exigée + une pièce d'identité.</p>
+                    <p style="font-weight: 600; color: var(--amethyst);">APPORTEZ UNE TOUCHE DE FRAÎCHEUR À VOS ÉVÉNEMENTS !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Fresh Touch Event</h3>
+                <p class="footer-quote">"Chaque table mérite sa propre poésie."</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="00228 91 97 95 14" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            
+            <div class="footer-links">
+                <a class="nav-link" data-page="accueil">Accueil</a>
+                <span style="color: var(--beige);">|</span>
+                <a class="nav-link" data-page="services">Services</a>
+                <span style="color: var(--beige);">|</span>
+                <a class="nav-link" data-page="realisations">Nos Réalisations</a>
+                <span style="color: var(--beige);">|</span>
+                <a class="nav-link" data-page="gallery">Galerie</a>
+                <span style="color: var(--beige);">|</span>
+                <a class="nav-link" data-page="about">À Propos</a>
+                <span style="color: var(--beige);">|</span>
+                <a class="nav-link" data-page="contact">Contact</a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 Fresh Touch Event - Marceline AYITE. Tous droits réservés.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">📍 Lomé - Togo | 📞 00228 91 97 95 14 | 📧 freshtouch@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation par pages
+        function navigateTo(page) {
+            // Masquer toutes les pages
+            document.querySelectorAll('.page-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            // Afficher la page demandée
+            document.getElementById(`page-${page}`).classList.add('active');
+            
+            // Mettre à jour la navigation active
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === page) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Fermer le menu mobile si ouvert
+            closeMenu();
+            
+            // Remonter en haut de la page
+            window.scrollTo(0, 0);
+            
+            // Mettre à jour l'URL
+            history.pushState({page}, '', `#${page}`);
+        }
+
+        // Navigation
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Gérer la navigation au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Vérifier si une page est spécifiée dans l'URL
+            const hash = window.location.hash.substring(1);
+            const validPages = ['accueil', 'services', 'realisations', 'gallery', 'about', 'contact'];
+            
+            if (validPages.includes(hash)) {
+                navigateTo(hash);
+            } else {
+                // Par défaut, afficher la page d'accueil
+                navigateTo('accueil');
+            }
+            
+            // Ajouter les écouteurs d'événements aux liens de navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    navigateTo(page);
+                });
+            });
+            
+            // Écouteur pour le logo
+            document.querySelector('.logo').addEventListener('click', function() {
+                navigateTo('accueil');
+            });
+        });
+
+        // Gallery Filter Function
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    if (item.dataset.category.includes(category)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                }
+            });
+        }
+
+        // Price Modal Functions
+        function openPriceModal() {
+            document.getElementById('priceModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePriceModal() {
+            document.getElementById('priceModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('priceModal');
+            if (event.target === modal) {
+                closePriceModal();
+            }
+        }
+
+        // Initialize gallery videos
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('.gallery-item video');
+            videos.forEach(video => {
+                video.addEventListener('mouseenter', function() {
+                    this.play();
+                });
+                video.addEventListener('mouseleave', function() {
+                    this.pause();
+                    this.currentTime = 0;
+                });
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Gérer le bouton de retour du navigateur
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.page) {
+                navigateTo(event.state.page);
+            }
+        });
+    </script>
+</body>
+</html>
