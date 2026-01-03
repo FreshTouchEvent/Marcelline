@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +6,6 @@
     <meta name="description" content="Fresh Touch Event par Marceline AYITE - Location de vaisselle, couverts et décoration de table sur mesure pour vos événements d'exception.">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
-   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
     <style>
         * {
     margin: 0;
@@ -17,7 +13,6 @@
     box-sizing: border-box;
 }
 
-/* CORRECTIONS POUR LA BARRE DE DÉFILEMENT */
 body {
     overflow-x: hidden;
     width: 100%;
@@ -36,7 +31,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Empêcher tous les conteneurs de dépasser */
 section, .page-container, .home-portfolio, .services-preview, 
 .philosophy, .testimonial, .about, .contact {
     max-width: 100vw;
@@ -64,7 +58,6 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
 
-/* Header */
 header {
     position: fixed;
     top: 0;
@@ -119,18 +112,12 @@ nav {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: conic-gradient(
-        transparent, 
-        rgba(139, 95, 191, 0.3), 
-        transparent 30%
-    );
+    background: conic-gradient(transparent, rgba(139, 95, 191, 0.3), transparent 30%);
     animation: rotate 6s linear infinite;
 }
 
 @keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
+    100% { transform: rotate(360deg); }
 }
 
 .nav-center {
@@ -195,23 +182,6 @@ nav {
     color: var(--amethyst);
 }
 
-.cta-btn {
-    background: linear-gradient(135deg, var(--amethyst), var(--gold));
-    color: var(--white);
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 10px rgba(139, 95, 191, 0.3);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    border: none;
-}
-
-/* EFFET BLOBS BUTTON */
 .cta-btn, .hero-cta, .price-modal-btn, .filter-btn {
     position: relative;
     overflow: hidden;
@@ -224,7 +194,14 @@ nav {
     z-index: 1;
 }
 
-/* Effet blob pour tous les boutons */
+.cta-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
 .cta-btn::before, .hero-cta::before, .price-modal-btn::before, .filter-btn::before {
     content: '';
     position: absolute;
@@ -244,7 +221,6 @@ nav {
     animation: blob-animation 2s ease-in-out infinite;
 }
 
-/* Animation blob principale */
 @keyframes blob-animation {
     0%, 100% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -264,7 +240,6 @@ nav {
     }
 }
 
-/* Effet de particules supplémentaires pour les boutons CTA */
 .cta-btn::after, .hero-cta::after {
     content: '';
     position: absolute;
@@ -296,9 +271,16 @@ nav {
     }
 }
 
-/* Animation spécifique pour le bouton hero */
 .hero-cta {
     animation: gentle-pulse 3s ease-in-out infinite;
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 @keyframes gentle-pulse {
@@ -312,14 +294,12 @@ nav {
     }
 }
 
-/* Effet de surbrillance au survol */
 .cta-btn:hover, .hero-cta:hover, .price-modal-btn:hover, .filter-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
     color: var(--white);
 }
 
-/* Animation pour les boutons de filtre actifs */
 .filter-btn.active {
     animation: active-blob 3s ease-in-out infinite;
 }
@@ -333,35 +313,6 @@ nav {
         border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
         transform: scale(1.05);
     }
-}
-
-/* Adaptation responsive pour mobiles */
-@media (max-width: 768px) {
-    .cta-btn:hover::before, .hero-cta:hover::before, 
-    .price-modal-btn:hover::before, .filter-btn:hover::before {
-        animation: blob-animation-mobile 2s ease-in-out infinite;
-    }
-    
-    @keyframes blob-animation-mobile {
-        0%, 100% {
-            border-radius: 50% 40% 40% 60% / 50% 40% 60% 50%;
-            transform: scale(1) translate(0, 0);
-        }
-        50% {
-            border-radius: 40% 50% 60% 40% / 60% 40% 60% 40%;
-            transform: scale(1.03) translate(0, 0);
-        }
-    }
-    
-    .cta-btn:hover, .hero-cta:hover, .price-modal-btn:hover, .filter-btn:hover {
-        transform: translateY(-1px);
-    }
-}
-
-.cta-btn:hover {
-    background: linear-gradient(135deg, var(--amethyst), var(--gold));
-    transform: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .menu-toggle {
@@ -378,7 +329,6 @@ nav {
     transition: 0.3s;
 }
 
-/* Page Container - CORRECTION DU DÉFILEMENT */
 .page-container {
     display: none;
     opacity: 0;
@@ -396,7 +346,6 @@ nav {
     overflow: visible;
 }
 
-/* Hero Section */
 .hero {
     height: 90vh;
     background: 
@@ -431,21 +380,6 @@ nav {
     text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
 
-.hero-cta {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
-    padding: 1rem 2.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    font-size: 1rem;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
 .hero-cta:hover {
     background: linear-gradient(135deg, var(--amethyst), var(--gold));
     color: var(--white);
@@ -464,7 +398,6 @@ nav {
     }
 }
 
-/* Section Styles - CORRECTION DU DÉFILEMENT */
 section {
     padding: 5rem 5%;
     max-width: 1400px;
@@ -490,7 +423,6 @@ section {
     font-family: 'Playfair Display', serif;
 }
 
-/* Philosophy Section */
 .philosophy {
     background: linear-gradient(135deg, var(--rose-pale) 0%, var(--blanc-casse) 100%);
     text-align: center;
@@ -534,7 +466,6 @@ section {
     line-height: 1.8;
 }
 
-/* Services Section */
 .services {
     background: var(--white);
 }
@@ -636,7 +567,6 @@ section {
     margin: 0;
 }
 
-/* Services Preview Section */
 .services-preview {
     background: var(--white);
     padding: 4rem 5%;
@@ -684,7 +614,6 @@ section {
     line-height: 1.6;
 }
 
-/* Réalisations Section */
 .realisations {
     background: var(--cream);
 }
@@ -768,7 +697,6 @@ section {
     margin-right: 0.5rem;
 }
 
-/* Portfolio Section */
 .portfolio {
     background: var(--white);
 }
@@ -854,7 +782,6 @@ section {
     filter: brightness(1.1) contrast(1.1) saturate(1.2);
 }
 
-/* Effet Spread avancé */
 .portfolio-item::before {
     content: '';
     position: absolute;
@@ -918,17 +845,7 @@ section {
     transform: translateY(0);
 }
 
-/* SUPPRESSION DES ANIMATIONS DE SCINTILLEMENT */
-.portfolio-item[data-category*="table-chaise"]::after,
-.portfolio-item[data-category*="table-chaise"]:hover::after {
-    display: none;
-}
-
-.portfolio-item[data-category*="table-chaise"]:hover img {
-    animation: none;
-}
-
-/* Portfolio d'accueil - NOUVELLE SECTION */
+/* CORRECTIONS POUR LA MOSAÏQUE EN 3 COLONNES À L'ACCUEIL */
 .home-portfolio {
     background: var(--cream);
     padding: 4rem 5%;
@@ -940,7 +857,7 @@ section {
 
 .home-portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
     width: 100%;
@@ -955,6 +872,12 @@ section {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     aspect-ratio: 1/1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139, 95, 191, 0.3);
 }
 
 .home-portfolio-item img {
@@ -962,9 +885,13 @@ section {
     height: 100%;
     object-fit: cover;
     max-width: 100%;
+    transition: transform 0.3s ease;
 }
 
-/* Testimonial */
+.home-portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
 .testimonial {
     background: linear-gradient(135deg, var(--amethyst), var(--gold));
     color: var(--white);
@@ -981,11 +908,7 @@ section {
     right: -50%;
     width: 100%;
     height: 200%;
-    background: radial-gradient(
-        circle at center,
-        rgba(139, 95, 191, 0.1) 0%,
-        transparent 70%
-    );
+    background: radial-gradient(circle at center, rgba(139, 95, 191, 0.1) 0%, transparent 70%);
     animation: float 20s ease-in-out infinite;
 }
 
@@ -1015,7 +938,6 @@ section {
     color: var(--cream);
 }
 
-/* Testimonial Image Section */
 .testimonial-image {
     text-align: center;
     margin: 2rem 0;
@@ -1028,7 +950,6 @@ section {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* About Section */
 .about {
     background: linear-gradient(135deg, var(--rose-pale) 0%, var(--blanc-casse) 100%);
     position: relative;
@@ -1152,13 +1073,6 @@ section {
     margin-top: 1.5rem;
 }
 
-.service-item {
-    background: var(--cream);
-    padding: 1rem;
-    border-radius: 10px;
-    border-left: 3px solid var(--gold);
-}
-
 .values-list {
     list-style: none;
     margin-top: 2rem;
@@ -1186,7 +1100,6 @@ section {
     transform: none;
 }
 
-/* Contact Section */
 .contact {
     background: var(--white);
     text-align: center;
@@ -1235,7 +1148,6 @@ section {
     font-weight: 500;
 }
 
-/* Price Modal */
 .price-modal-btn {
     background: linear-gradient(135deg, var(--amethyst), var(--gold));
     color: var(--white);
@@ -1353,7 +1265,6 @@ section {
     background: rgba(139, 95, 191, 0.1);
 }
 
-/* Contact Info Section */
 .contact-info {
     background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
     padding: 4rem 5%;
@@ -1392,7 +1303,6 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Footer */
 footer {
     background: linear-gradient(135deg, var(--dark), #1a1a1a);
     color: var(--cream);
@@ -1501,31 +1411,157 @@ footer::before {
     font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 968px) {
-    .nav-center {
-        display: none;
+.admin-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--cream);
+    border-radius: 15px;
+}
+
+.admin-form {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.admin-products-list {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.admin-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--amethyst), var(--gold));
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    animation: adminPulse 3s ease-in-out infinite;
+}
+
+.admin-float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.6);
+}
+
+@keyframes adminPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
     }
-    
-    .services-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .realisations-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .services-grid-preview {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(212, 175, 55, 0.6);
     }
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
+.admin-access-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
 
+.admin-access-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.admin-access-content h3 {
+    color: var(--amethyst);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.admin-access-content input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.admin-access-content button {
+    background: linear-gradient(135deg, var(--amethyst), var(--gold));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.admin-access-content button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.services .price-modal-btn,
+.realisations .price-modal-btn {
+    display: none;
+}
+
+.image-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--gold);
+    margin-top: 0.5rem;
+}
+
+.portfolio-image-preview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 968px) {
+    .nav-center { display: none; }
+    .services-container { grid-template-columns: 1fr; gap: 2rem; }
+    .realisations-grid { grid-template-columns: 1fr; }
+    .services-grid-preview { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .home-portfolio-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
     .nav-links {
         position: fixed;
         top: 80px;
@@ -1539,170 +1575,52 @@ footer::before {
         gap: 1.5rem;
         transition: left 0.3s;
     }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .portfolio-container {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .modal-content {
-        margin: 1rem;
-    }
-
-    .price-table {
-        font-size: 0.9rem;
-    }
-
-    .price-table th, .price-table td {
-        padding: 0.7rem;
-    }
-
-    .contact-methods {
-        grid-template-columns: 1fr;
-    }
-
-    .social-links {
-        gap: 1rem;
-    }
-    
-    .social-links a {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-    }
-
-    .about-quote {
-        font-size: 1.5rem;
-    }
-
-    .about-services {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-item h3 {
-        font-size: 1.2rem;
-    }
-    
-    .realisation-header {
-        padding: 1rem;
-    }
-    
-    .realisation-header h3 {
-        font-size: 1.1rem;
-    }
-    
-    .realisation-content {
-        padding: 1rem;
-    }
-    
-    .why-choose-us {
-        padding: 1.5rem;
-    }
-    
-    .why-item {
-        padding: 0.8rem;
-    }
-    
-    .home-portfolio-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-    }
-    
-    .services-grid-preview {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .service-preview-item {
-        padding: 1.5rem;
-    }
+    .nav-links.active { left: 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.1rem; }
+    .section-title { font-size: 2rem; }
+    .about-content { grid-template-columns: 1fr; }
+    .portfolio-container { grid-template-columns: 1fr; }
+    .footer-links { flex-direction: column; gap: 1rem; }
+    .modal-content { margin: 1rem; }
+    .price-table { font-size: 0.9rem; }
+    .price-table th, .price-table td { padding: 0.7rem; }
+    .contact-methods { grid-template-columns: 1fr; }
+    .social-links { gap: 1rem; }
+    .social-links a { width: 45px; height: 45px; font-size: 1.3rem; }
+    .about-quote { font-size: 1.5rem; }
+    .about-services { grid-template-columns: 1fr; }
+    .service-item h3 { font-size: 1.2rem; }
+    .realisation-header { padding: 1rem; }
+    .realisation-header h3 { font-size: 1.1rem; }
+    .realisation-content { padding: 1rem; }
+    .why-choose-us { padding: 1.5rem; }
+    .why-item { padding: 0.8rem; }
+    .home-portfolio-container { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .services-grid-preview { grid-template-columns: 1fr; gap: 1.5rem; }
+    .service-preview-item { padding: 1.5rem; }
+    .admin-section { margin: 1rem; padding: 1rem; }
+    .admin-access-content { padding: 2rem; margin: 1rem; }
+    .admin-float-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.3rem; }
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .services-container {
-        gap: 1.5rem;
-    }
-    
-    .service-item {
-        padding: 1rem;
-    }
-    
-    .realisation-card {
-        margin-bottom: 1.5rem;
-    }
-    
-    .contact-info-top {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .footer-brand h3 {
-        font-size: 1.5rem;
-    }
-    
-    .home-portfolio-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .about-image {
-        height: 400px;
-    }
-    
-    .service-preview-item i {
-        font-size: 2.5rem;
-    }
-    .price-table th, .price-table td {
-        padding: 0.3rem;
-    }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .section-title { font-size: 1.8rem; }
+    .services-container { gap: 1.5rem; }
+    .service-item { padding: 1rem; }
+    .realisation-card { margin-bottom: 1.5rem; }
+    .contact-info-top { flex-direction: column; gap: 1rem; }
+    .footer-brand h3 { font-size: 1.5rem; }
+    .home-portfolio-container { grid-template-columns: 1fr; }
+    .about-image { height: 400px; }
+    .service-preview-item i { font-size: 2.5rem; }
+    .price-table th, .price-table td { padding: 0.3rem; }
 }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <div class="logo" onclick="navigateTo('accueil')">
@@ -1728,9 +1646,7 @@ footer::before {
         </nav>
     </header>
 
-    <!-- Page Container - Accueil -->
     <div id="page-accueil" class="page-container active">
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <h1>Fresh Touch Event - Votre Élégance de Table</h1>
@@ -1739,7 +1655,6 @@ footer::before {
             </div>
         </section>
 
-        <!-- Philosophy Section -->
         <section class="philosophy">
             <p class="quote">"Présentation – Fresh Touch Event."</p>
             <div class="philosophy-text">
@@ -1749,47 +1664,42 @@ footer::before {
             </div>
         </section>
         
-<!-- Logo ajouté sur la page Contact -->
+       <!-- Logo ajouté sur la page Contact -->
             <div class="contact-logo">
                 <img src="https://freshtouchevent.gt.tc/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-05_21_45-PM.png" alt="Logo Fresh Touch Event">
             </div>
             
-        <!-- Portfolio d'accueil -->
         <section class="home-portfolio">
-            <h2 class="section-title">Quelques Réalisations</h2>
-            <p class="section-subtitle">Un aperçu de notre univers créatif</p>
-            
-            <div class="home-portfolio-container">
-                <div class="home-portfolio-item">
-                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/ChatGPT-Image-Oct-23-2025-09_50_42-AM.png" alt="Table élégante">
-                </div>
-                <div class="home-portfolio-item">
-                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.15.jpeg" alt="Couverts dorés">
-                </div>
-                <div class="home-portfolio-item">
-                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.38.jpeg" alt="Composition florale">
-                </div>
-                <div class="home-portfolio-item">
-                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.51.47-1.jpeg" alt="Décoration complète">
-                </div>
-                <div class="home-portfolio-item">
-                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.16-1.jpeg" alt="Décoration complète">
-                </div>
-                <div class="home-portfolio-item">
-                    <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.51.47.jpeg" alt="Décoration complète">
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a class="cta-btn" onclick="navigateTo('portfolio')">Voir tout notre portfolio</a>
-            </div>
-        </section>
+    <h2 class="section-title">Quelques Réalisations</h2>
+    <p class="section-subtitle">Un aperçu de notre univers créatif</p>
+    <div class="home-portfolio-container">
+        <div class="home-portfolio-item">
+            <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/ChatGPT-Image-Oct-23-2025-09_50_42-AM.png" alt="Table élégante">
+        </div>
+        <div class="home-portfolio-item">
+            <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.15.jpeg" alt="Couverts dorés">
+        </div>
+        <div class="home-portfolio-item">
+            <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.38.jpeg" alt="Composition florale">
+        </div>
+        <div class="home-portfolio-item">
+            <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.51.47-1.jpeg" alt="Décoration complète">
+        </div>
+        <div class="home-portfolio-item">
+            <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.52.16-1.jpeg" alt="Décoration complète">
+        </div>
+        <div class="home-portfolio-item">
+            <img src="http://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-22-at-07.51.47.jpeg" alt="Décoration complète">
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+        <a class="cta-btn" onclick="navigateTo('portfolio')">Voir tout notre portfolio</a>
+    </div>
+</section>
 
-        <!-- Services Preview -->
         <section class="services-preview">
             <h2 class="section-title">Nos Domaines d'Expertise</h2>
             <p class="section-subtitle">Découvrez nos spécialités pour sublimer vos événements</p>
-            
             <div class="services-grid-preview">
                 <div class="service-preview-item">
                     <i class="fas fa-utensils"></i>
@@ -1812,18 +1722,15 @@ footer::before {
                     <p>Accompagnement expert pour harmoniser couleurs, styles et ambiances</p>
                 </div>
             </div>
-            
             <div style="text-align: center; margin-top: 2rem;">
                 <a class="cta-btn" onclick="navigateTo('services')">Découvrir tous nos services</a>
             </div>
         </section>
 
-        <!-- Image avant témoignage -->
         <div class="testimonial-image">
             <img src="https://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-13.44.12.jpeg" alt="Décoration de table élégante">
         </div>
 
-        <!-- Testimonial Section -->
         <section class="testimonial">
             <div class="testimonial-content">
                 <p class="testimonial-text">"Un service impeccable et des couverts magnifiques ! Notre mariage a été embelli par leurs touches élégantes. Marceline a su comprendre notre vision et l'a sublimée."</p>
@@ -1832,48 +1739,40 @@ footer::before {
         </section>
     </div>
 
-    <!-- Page Container - Services -->
     <div id="page-services" class="page-container">
         <section class="services">
-            <h2 class="section-title">Nos Services Complets</h2>
-            <p class="section-subtitle">Une gamme exhaustive pour transformer vos événements en moments inoubliables</p>
-            
+            <h2 class="section-title">Nos Services</h2>
+            <p class="section-subtitle">Découvrez l'ensemble de nos prestations pour des événements mémorables</p>
             <div class="services-container">
                 <div class="services-list">
                     <div class="service-item">
-                        <h3><i class="fas fa-utensils"></i> Location de vaisselle haut de gamme</h3>
+                        <h3><i class="fas fa-utensils"></i> Vaisselle Haut de Gamme</h3>
                         <ul>
-                            <li>Assiettes élégantes et raffinées</li>
-                            <li>Verrerie cristalline étincelante</li>
-                            <li>Couverts en finition dorée et argentée</li>
-                            <li>Accessoires de service premium</li>
-                            <li>Plateaux et présentoirs design</li>
+                            <li>Assiettes plates, creuses et à dessert design</li>
+                            <li>Verrerie cristalline et contemporaine</li>
+                            <li>Couverts en inox et métal argenté</li>
+                            <li>Services à thé et café raffinés</li>
                         </ul>
                     </div>
-                    
                     <div class="service-item">
-                        <h3><i class="fas fa-table"></i> Linge de table raffiné</h3>
+                        <h3><i class="fas fa-table"></i> Linge de Table Élégant</h3>
                         <ul>
-                            <li>Nappes en lin et coton de qualité</li>
+                            <li>Nappes en lin, coton et satin</li>
                             <li>Chemins de table sur mesure</li>
-                            <li>Serviettes en tissu premium</li>
-                            <li>Sets de table personnalisés</li>
-                            <li>Napperons et sous-verres élégants</li>
+                            <li>Serviettes en tissu assorties</li>
+                            <li>Napperons et dessous de plat</li>
                         </ul>
                     </div>
-                    
                     <div class="service-item">
-                        <h3><i class="fas fa-palette"></i> Décoration de table</h3>
+                        <h3><i class="fas fa-palette"></i> Décoration Événementielle</h3>
                         <ul>
-                            <li>Bougeoirs et chandeliers élégants</li>
                             <li>Centres de table floraux et modernes</li>
-                            <li>Vases et compositions artistiques</li>
+                            <li>Éclairage d'ambiance</li>
                             <li>Éléments décoratifs thématiques</li>
-                            <li>Supports et présentoirs créatifs</li>
+                            <li>Supports et présentoirs design</li>
                         </ul>
                     </div>
-                    
-                    <div class="service-item">
+          <div class="service-item">
                         <h3><i class="fas fa-lightbulb"></i> Conseil en mise en scène</h3>
                         <ul>
                             <li>Harmonisation des couleurs et styles</li>
@@ -1884,7 +1783,9 @@ footer::before {
                         </ul>
                     </div>
                 </div>
-                
+
+                </div>
+
                 <div class="why-choose-us">
                     <h3>Pourquoi choisir Fresh Touch Event?</h3>
                     
@@ -1912,7 +1813,7 @@ footer::before {
         </section>
     </div>
 
-    <!-- Page Container - Réalisations -->
+     <!-- Page Container - Réalisations -->
     <div id="page-realisations" class="page-container">
         <section class="realisations">
             <h2 class="section-title">Nos Réalisations</h2>
@@ -2028,9 +1929,10 @@ footer::before {
                 </div>
             </div>
         </section>
+
     </div>
 
-    <!-- Page Container - Portfolio -->
+     <!-- Page Container - Portfolio -->
     <div id="page-portfolio" class="page-container">
         <section class="portfolio">
             <h2 class="section-title">Notre Portfolio Complet</h2>
@@ -2052,6 +1954,11 @@ footer::before {
             
             <div class="portfolio-container">
                 <!-- Vidéo principale -->
+                <div class="portfolio-item" data-category="all">
+                    <video muted autoplay loop playsinline>
+                        <source src="https://freshtouchevent.gt.tc/wp-content/uploads/2025/10/WhatsApp-Video-2025-10-22-at-07.52.15.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
                     <div class="portfolio-overlay">
                         <h4>Vidéo de Présentation</h4>
                         <p>Découvrez notre univers en vidéo</p>
@@ -2278,8 +2185,8 @@ footer::before {
             </div>
         </section>
     </div>
-
-    <!-- Page Container - À Propos -->
+     
+<!-- Page Container - À Propos -->
     <div id="page-about" class="page-container">
         <section class="about">
             <h2 class="section-title">À Propos de Marceline AYITE</h2>
@@ -2334,67 +2241,186 @@ footer::before {
         </section>
     </div>
 
-    <!-- Page Container - Contact -->
     <div id="page-contact" class="page-container">
         <section class="contact">
             <div class="contact-header">
-                <h2>FRESH TOUCH EVENT</h2>
-                <p class="subtitle">LOCATION DE COUVERTS & DÉCORATION DE TABLE HAUT DE GAMME</p>
+                <h2>Contactez-nous</h2>
+                <p class="subtitle">Préparons ensemble votre prochain événement</p>
+                <p>Discutons de votre projet et créons l'ambiance parfaite pour votre célébration</p>
             </div>
-            
             <!-- Logo ajouté sur la page Contact -->
             <div class="contact-logo">
                 <img src="https://freshtouchevent.gt.tc/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-05_21_45-PM.png" alt="Logo Fresh Touch Event">
             </div>
-            
             <div class="contact-info-top">
-                <div class="contact-info-item">📞 00228 91 97 95 14/90 20 17 97</div>
-                <div class="contact-info-item">📧 freshtouchevent@gmail.com</div>
-                <div class="contact-info-item">📍 Lomé, Togo</div>
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i> +228 91 97 95 14
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i> +228 90 20 17 97
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i> freshtouchevent@gmail.com
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i> Lomé, Togo
+                </div>
+            </div>
+            <button class="price-modal-btn" onclick="openPriceModal()">
+                <i class="fas fa-tags"></i> Consulter nos tarifs de location
+            </button>
+            <section class="contact-info">
+                <h2 class="section-title">Comment Nous Contacter</h2>
+                <p class="section-subtitle">Plusieurs moyens pour échanger sur votre projet</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <h3><i class="fab fa-whatsapp"></i> WhatsApp</h3>
+                        <p>Échangez directement avec nous</p>
+                        <p><strong>+228 91 97 95 14</strong></p>
+                        <p>Réponse rapide garantie</p>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="fas fa-phone"></i> Appel Téléphonique</h3>
+                        <p>Discutons de votre projet</p>
+                        <p><strong>+228 91 97 95 14</strong></p>
+                        <p><strong>+228 90 20 17 97</strong></p>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>Envoyez-nous vos demandes détaillées</p>
+                        <p><strong>freshtouchevent@gmail.com</strong></p>
+                        <p>Réponse sous 24h</p>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="fab fa-tiktok"></i> TikTok</h3>
+                        <p>Découvrez nos dernières créations</p>
+                        <p><strong>@freshouuu</strong></p>
+                        <p>Inspirez-vous de nos réalisations</p>
+                    </div>
+                </div>
+                <div style="margin-top: 3rem; padding: 2rem; background: var(--cream); border-radius: 15px;">
+                    <h3 style="color: var(--amethyst); margin-bottom: 1rem;">📞 Appelez-nous dès maintenant !</h3>
+                    <p>Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans l'organisation de votre événement.</p>
+                    <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <a href="tel:+22891979514" class="cta-btn">
+                            <i class="fas fa-phone"></i> Appeler le 91 97 95 14
+                        </a>
+                        <a href="https://wa.me/22891979514" class="cta-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <div id="page-admin" class="page-container">
+        <section class="admin-section">
+            <h2 class="section-title">Administration des Produits & Portfolio</h2>
+            <p class="section-subtitle">Gérez vos produits, tarifs et images du portfolio</p>
+            
+            <!-- Formulaire d'ajout de produit -->
+            <div class="admin-form">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">➕ Ajouter un Nouveau Produit</h3>
+                <form id="product-form" onsubmit="addProduct(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Nom du produit</label>
+                            <input type="text" id="product-name" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Prix</label>
+                            <input type="text" id="product-price" placeholder="ex: 2 500 F" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Catégorie</label>
+                        <select id="product-category" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="vaisselle">🍽️ Vaisselle</option>
+                            <option value="linge">📦 Linge de table</option>
+                            <option value="decoration">🎨 Décoration</option>
+                            <option value="mobilier">🪑 Mobilier</option>
+                            <option value="autre">📋 Autre</option>
+                        </select>
+                    </div>
+                    <button type="submit" style="background: linear-gradient(135deg, var(--amethyst), var(--gold)); color: white; border: none; padding: 1rem 2rem; border-radius: 5px; cursor: pointer; font-weight: 600; width: 100%;">
+                        Ajouter le produit
+                    </button>
+                </form>
             </div>
 
-            <!-- Bouton pour ouvrir la boîte de dialogue des prix -->
-            <button class="price-modal-btn" onclick="openPriceModal()">Voir nos Prix de Location</button>
-        </section>
+            <!-- Formulaire d'ajout d'image au portfolio -->
+<div class="admin-form">
+    <h3 style="color: var(--gold); margin-bottom: 1rem;">🖼️ Ajouter une Image au Portfolio</h3>
+    <form id="portfolio-form" onsubmit="addPortfolioImage(event)" enctype="multipart/form-data">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Fichier image</label>
+                <input type="file" id="portfolio-image-file" accept="image/*" required 
+                       style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Titre</label>
+                <input type="text" id="portfolio-image-title" placeholder="ex: Mariage Élégant" required 
+                       style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Description</label>
+                <input type="text" id="portfolio-image-description" 
+                       placeholder="ex: Table ronde avec décoration florale" required 
+                       style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Catégorie</label>
+                <select id="portfolio-image-category" 
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                    <option value="mariage">💍 Mariage</option>
+                    <option value="entreprise">🏢 Événement d'entreprise</option>
+                    <option value="anniversaire">🎂 Anniversaire</option>
+                    <option value="decoration">🎨 Décoration</option>
+                </select>
+            </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Aperçu de l'image</label>
+            <img id="portfolio-image-preview" src="" alt="Aperçu" class="image-preview" style="display: none;">
+            <div id="portfolio-no-preview" style="padding: 2rem; background: var(--cream); border-radius: 8px; text-align: center; color: #666;">
+                Aperçu de l'image apparaîtra ici
+            </div>
+        </div>
+        <button type="submit" 
+                style="background: linear-gradient(135deg, var(--amethyst), var(--gold)); color: white; border: none; padding: 1rem 2rem; border-radius: 5px; cursor: pointer; font-weight: 600; width: 100%;">
+            Ajouter au Portfolio
+        </button>
+    </form>
+</div>
 
-        <!-- Contact Info Section -->
-        <section class="contact-info">
-            <h2 class="section-title">Comment Nous Contacter</h2>
-            <p class="section-subtitle">Plusieurs façons de nous joindre pour discuter de votre projet</p>
+            <!-- Produits existants -->
+            <div class="admin-products-list">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">📋 Liste des Produits (<span id="products-count">0</span>)</h3>
+                <div id="products-list"></div>
+            </div>
+
+            <!-- Images du portfolio existantes -->
+            <div class="admin-products-list">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">🖼️ Images du Portfolio (<span id="portfolio-count">0</span>)</h3>
+                <div id="portfolio-list"></div>
+            </div>
             
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <h3>📞 Par Téléphone</h3>
-                    <p><strong>00228 91 97 95 14/90 20 17 97</strong></p>
-                    <p>Du lundi au samedi</p>
-                    <p>8h00 - 20h00</p>
-                </div>
-                
-                <div class="contact-method">
-                    <h3>📧 Par Email</h3>
-                    <p><strong>freshtouchevent@gmail.com</strong></p>
-                    <p>Réponse sous 24h</p>
-                    <p>Devis personnalisé gratuit</p>
-                </div>
-                
-                <div class="contact-method">
-                    <h3>💬 Sur les Réseaux</h3>
-                    <p><strong>TikTok & WhatsApp</strong></p>
-                    <p>@freshtouchevent</p>
-                    <p>Messages directs</p>
-                </div>
-                
-                <div class="contact-method">
-                    <h3>📍 En Personne</h3>
-                    <p><strong>Sur rendez-vous</strong></p>
-                    <p>Lomé, Togo</p>
-                    <p>Sans frais</p>
-                </div>
+            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--cream); border-radius: 10px;">
+                <p><strong>💡 Astuce :</strong> Les produits que vous ajoutez seront visibles dans les tarifs, et les images dans le portfolio.</p>
+                <button class="cta-btn" onclick="navigateTo('portfolio')" style="margin-top: 1rem;">
+                    Voir le portfolio
+                </button>
+                <button class="cta-btn" onclick="navigateTo('contact')" style="margin-top: 1rem; margin-left: 1rem;">
+                    Voir les tarifs
+                </button>
             </div>
         </section>
     </div>
 
-    <!-- Modal pour les prix -->
     <div id="priceModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -2403,74 +2429,17 @@ footer::before {
             </div>
             <div class="modal-body">
                 <p>Découvrez nos tarifs pour la location de vaisselle, couverts et décoration de table. Tous nos prix sont indiqués pour une journée de location.</p>
-                
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th>DESIGNATIONS</th>
-                            <th>PRIX UNITAIRE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Nappe blanche pour table ronde</td>
-                            <td>2 500 F</td>
-                        </tr>
-                        <tr>
-                            <td>Nappe blanche pour table rectangulaire</td>
-                            <td>2 000 F</td>
-                        </tr>
-                        <tr>
-                            <td>Napperon (couleur bleu et vert)</td>
-                            <td>300 F</td>
-                        </tr>
-                        <tr>
-                            <td>Couteaux</td>
-                            <td>100 F</td>
-                        </tr>
-                        <tr>
-                            <td>Fourchette</td>
-                            <td>100 F</td>
-                        </tr>
-                        <tr>
-                            <td>Cuillère</td>
-                            <td>100 F</td>
-                        </tr>
-                        <tr>
-                            <td>Assiette à bordure dorée - entrée</td>
-                            <td>200 F</td>
-                        </tr>
-                        <tr>
-                            <td>Assiette à bordure dorée - résistance</td>
-                            <td>200 F</td>
-                        </tr>
-                        <tr>
-                            <td>Verre à eau</td>
-                            <td>100 F</td>
-                        </tr>
-                        <tr>
-                            <td>Verre à vin</td>
-                            <td>100 F</td>
-                        </tr>
-                        <tr>
-                            <td>Décoration de table - rose de fleur</td>
-                            <td>2 500 F</td>
-                        </tr>
-                        <tr>
-                            <td>Décoration de table - pot de fleur</td>
-                            <td>2 500 F</td>
-                        </tr>
-                        <tr>
-                            <td>Table de 08 personnes</td>
-                            <td>1 500 F</td>
-                        </tr>
-                        <tr>
-                            <td>Chafindish</td>
-                            <td>2 000 F</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
+                <div id="dynamic-prices-container">
+                    <table class="price-table" id="dynamic-price-table">
+                        <thead>
+                            <tr>
+                                <th>DESIGNATIONS</th>
+                                <th>PRIX UNITAIRE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prices-tbody"></tbody>
+                    </table>
+                </div>
                 <div style="margin-top: 2rem; padding: 1.5rem; background: var(--cream); border-radius: 10px;">
                     <p style="font-style: italic; margin-bottom: 1rem;"><strong>Note :</strong> Pour la location de matériels, une caution est exigée + une pièce d'identité.</p>
                     <p style="font-weight: 600; color: var(--amethyst);">APPORTEZ UNE TOUCHE DE FRAÎCHEUR À VOS ÉVÉNEMENTS !</p>
@@ -2479,19 +2448,29 @@ footer::before {
         </div>
     </div>
 
-    <!-- Footer -->
+    <div id="adminAccessModal" class="admin-access-modal">
+        <div class="admin-access-content">
+            <h3>🔐 Accès interdit</h3>
+            <p>Veuillez entrer le code d'accès :</p>
+            <input type="password" id="adminPassword" placeholder="Entrez le code" maxlength="6">
+            <button onclick="checkAdminAccess()">Accéder à l'administration</button>
+        </div>
+    </div>
+
+    <button class="admin-float-btn" onclick="showAdminAccess()" title="Accès Administrateur">
+        <i class="fas fa-cog"></i>
+    </button>
+
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>Fresh Touch Event</h3>
                 <p class="footer-quote">"Chaque table mérite sa propre poésie."</p>
             </div>
-            
             <div class="social-links">
                 <a href="https://www.tiktok.com/@freshouuu" title="TikTok"><i class="fab fa-tiktok"></i></a>
                 <a href="https://wa.me/22891979514" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
-            
             <div class="footer-links">
                 <a class="nav-link" data-page="accueil">Accueil</a>
                 <span style="color: var(--beige);">|</span>
@@ -2505,7 +2484,6 @@ footer::before {
                 <span style="color: var(--beige);">|</span>
                 <a class="nav-link" data-page="contact">Contact</a>
             </div>
-            
             <div class="footer-copyright">
                 <p>&copy; 2025 Fresh Touch Event - Marceline AYITE. Tous droits réservés.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.8rem;">📍 Lomé - Togo | 📞 +228 91979514/90 20 17 97 | 📧 freshtouchevent@gmail.com</p>
@@ -2513,202 +2491,786 @@ footer::before {
         </div>
     </footer>
 
-    <script>
-        // Navigation par pages
-        function navigateTo(page) {
-            // Masquer toutes les pages
-            document.querySelectorAll('.page-container').forEach(container => {
-                container.classList.remove('active');
-            });
-            
-            // Afficher la page demandée
-            document.getElementById(`page-${page}`).classList.add('active');
-            
-            // Mettre à jour la navigation active
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-page') === page) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Fermer le menu mobile si ouvert
-            closeMenu();
-            
-            // Remonter en haut de la page
-            window.scrollTo(0, 0);
-            
-            // Mettre à jour l'URL
-            history.pushState({page}, '', `#${page}`);
-        }
+<script>
+// =============================================
+// GESTION DE L'ADMINISTRATION - VERSION AVEC UPLOAD LOCAL
+// =============================================
 
-        // Navigation mobile
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-            
-            // Animation des barres du menu hamburger
-            const spans = document.querySelectorAll('.menu-toggle span');
-            if (navLinks.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        }
+// Configuration et constantes
+const CONFIG = {
+    ADMIN_CODE: "apidio",
+    STORAGE_KEYS: {
+        PRODUCTS: 'freshTouchProducts',
+        PORTFOLIO: 'freshTouchPortfolio',
+        AUTH: 'adminAuthenticated'
+    },
+    CATEGORIES: {
+        vaisselle: '🍽️ Vaisselle',
+        linge: '📦 Linge de table',
+        decoration: '🎨 Décoration',
+        mobilier: '🪑 Mobilier',
+        mariage: '💒 Mariage',
+        entreprise: '🏢 Événement d\'entreprise',
+        anniversaire: '🎂 Anniversaire'
+    },
+    VALID_PAGES: ['accueil', 'services', 'realisations', 'portfolio', 'about', 'contact', 'admin']
+};
 
-        function closeMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.remove('active');
-            
-            // Réinitialiser l'animation du menu hamburger
-            const spans = document.querySelectorAll('.menu-toggle span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
+// Données de l'application
+let products = [];
+let portfolioImages = [];
+let isAdminAuthenticated = false;
 
-        // Gérer la navigation au chargement de la page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Vérifier si une page est spécifiée dans l'URL
-            const hash = window.location.hash.substring(1);
-            const validPages = ['accueil', 'services', 'realisations', 'portfolio', 'about', 'contact'];
-            
-            if (validPages.includes(hash)) {
-                navigateTo(hash);
-            } else {
-                // Par défaut, afficher la page d'accueil
-                navigateTo('accueil');
-            }
-            
-            // Ajouter les écouteurs d'événements aux liens de navigation
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const page = this.getAttribute('data-page');
-                    navigateTo(page);
-                });
-            });
-            
-            // Écouteur pour le logo
-            document.querySelector('.logo').addEventListener('click', function() {
-                navigateTo('accueil');
-            });
-            
-            // Fermer le menu mobile quand on clique sur un lien
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
+// Produits par défaut
+const defaultProducts = [
+    { id: 1, name: "Nappe blanche pour table ronde", price: "2 500 F", category: "linge" },
+    { id: 2, name: "Nappe blanche pour table rectangulaire", price: "2 000 F", category: "linge" },
+    { id: 3, name: "Napperon (couleur bleu et vert)", price: "300 F", category: "linge" },
+    { id: 4, name: "Couteaux", price: "100 F", category: "vaisselle" },
+    { id: 5, name: "Fourchette", price: "100 F", category: "vaisselle" },
+    { id: 6, name: "Cuillère", price: "100 F", category: "vaisselle" },
+    { id: 7, name: "Assiette à bordure dorée - entrée", price: "200 F", category: "vaisselle" },
+    { id: 8, name: "Assiette à bordure dorée - résistance", price: "200 F", category: "vaisselle" },
+    { id: 9, name: "Verre à eau", price: "100 F", category: "vaisselle" },
+    { id: 10, name: "Verre à vin", price: "100 F", category: "vaisselle" },
+    { id: 11, name: "Décoration de table - rose de fleur", price: "2 500 F", category: "decoration" },
+    { id: 12, name: "Décoration de table - pot de fleur", price: "2 500 F", category: "decoration" },
+    { id: 13, name: "Table de 08 personnes", price: "1 500 F", category: "mobilier" }
+];
+
+// Images de portfolio par défaut (vide car on utilise les images existantes du HTML)
+const defaultPortfolioImages = [];
+
+// =============================================
+// INITIALISATION DE L'APPLICATION
+// =============================================
+
+function initializeApp() {
+    loadData();
+    setupEventListeners();
+    setupNavigation();
+    checkAuthentication();
+    
+    // Afficher la page appropriée selon l'URL
+    const hash = window.location.hash.substring(1);
+    if (CONFIG.VALID_PAGES.includes(hash)) {
+        if (hash === 'admin' && !isAdminAuthenticated) {
+            showAdminAccess();
+        } else {
+            navigateTo(hash);
+        }
+    } else {
+        navigateTo('accueil');
+    }
+}
+
+function loadData() {
+    // Charger les produits
+    const storedProducts = localStorage.getItem(CONFIG.STORAGE_KEYS.PRODUCTS);
+    products = storedProducts ? JSON.parse(storedProducts) : [...defaultProducts];
+    
+    // Charger le portfolio
+    const storedPortfolio = localStorage.getItem(CONFIG.STORAGE_KEYS.PORTFOLIO);
+    portfolioImages = storedPortfolio ? JSON.parse(storedPortfolio) : [...defaultPortfolioImages];
+    
+    // Sauvegarder si utilisation des données par défaut
+    if (!storedProducts) saveProducts();
+    if (!storedPortfolio) savePortfolio();
+    
+    // Mettre à jour les affichages
+    updateAdminProductsList();
+    updateAdminPortfolioList();
+    loadProductsForUsers();
+}
+
+function setupEventListeners() {
+    // Navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const page = this.getAttribute('data-page');
+            navigateTo(page);
         });
+    });
+    
+    // Logo
+    document.querySelector('.logo').addEventListener('click', function() {
+        navigateTo('accueil');
+    });
+    
+    // Formulaire d'ajout de produit
+    const productForm = document.getElementById('product-form');
+    if (productForm) {
+        productForm.addEventListener('submit', addProduct);
+    }
+    
+    // Formulaire d'ajout d'image portfolio
+    const portfolioForm = document.getElementById('portfolio-form');
+    if (portfolioForm) {
+        portfolioForm.addEventListener('submit', addPortfolioImage);
+    }
+    
+    // Aperçu de l'image du portfolio
+    const portfolioImageFile = document.getElementById('portfolio-image-file');
+    if (portfolioImageFile) {
+        portfolioImageFile.addEventListener('change', updatePortfolioPreview);
+    }
+    
+    // Gestion du redimensionnement
+    window.addEventListener('resize', handleResize);
+    
+    // Gestion du scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // Gestion du bouton retour
+    window.addEventListener('popstate', handlePopState);
+}
 
-        // Portfolio Filter Function
-        function filterPortfolio(category) {
-            const items = document.querySelectorAll('.portfolio-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            // Update active button avec animation
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.transform = 'scale(0.95)';
-            });
-            event.target.classList.add('active');
-            event.target.style.transform = 'scale(1)';
-            
-            // Animation de transition des éléments
-            items.forEach((item, index) => {
-                if (category === 'all') {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, index * 50);
-                } else {
-                    if (item.dataset.category.includes(category)) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, index * 50);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
-                    }
-                }
-            });
+function setupNavigation() {
+    // Fermer le menu mobile quand on clique sur un lien
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+}
+
+function checkAuthentication() {
+    isAdminAuthenticated = localStorage.getItem(CONFIG.STORAGE_KEYS.AUTH) === 'true';
+}
+
+// =============================================
+// GESTION DE L'AUTHENTIFICATION ADMIN
+// =============================================
+
+function showAdminAccess() {
+    const modal = document.getElementById('adminAccessModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.getElementById('adminPassword').focus();
+    }
+}
+
+function checkAdminAccess() {
+    const password = document.getElementById('adminPassword').value;
+    if (password === CONFIG.ADMIN_CODE) {
+        isAdminAuthenticated = true;
+        localStorage.setItem(CONFIG.STORAGE_KEYS.AUTH, 'true');
+        document.getElementById('adminAccessModal').style.display = 'none';
+        navigateTo('admin');
+        showNotification('✅ Accès administrateur autorisé !', 'success');
+    } else {
+        showNotification('❌ Code incorrect. Veuillez réessayer.', 'error');
+        document.getElementById('adminPassword').value = '';
+        document.getElementById('adminPassword').focus();
+    }
+}
+
+function logoutAdmin() {
+    isAdminAuthenticated = false;
+    localStorage.removeItem(CONFIG.STORAGE_KEYS.AUTH);
+    navigateTo('accueil');
+    showNotification('✅ Déconnexion réussie.', 'success');
+}
+
+// =============================================
+// GESTION DES PRODUITS
+// =============================================
+
+function addProduct(event) {
+    event.preventDefault();
+    
+    if (!isAdminAuthenticated) {
+        showNotification('❌ Veuillez vous authentifier pour ajouter des produits.', 'error');
+        showAdminAccess();
+        return;
+    }
+    
+    const name = document.getElementById('product-name').value.trim();
+    const price = document.getElementById('product-price').value.trim();
+    const category = document.getElementById('product-category').value;
+    
+    // Validation
+    if (!name || !price) {
+        showNotification('❌ Veuillez remplir tous les champs obligatoires.', 'error');
+        return;
+    }
+    
+    const product = {
+        id: Date.now(), // ID unique basé sur le timestamp
+        name: name,
+        price: price,
+        category: category
+    };
+    
+    products.push(product);
+    saveProducts();
+    
+    // Réinitialiser le formulaire
+    document.getElementById('product-form').reset();
+    
+    // Mettre à jour les affichages
+    updateAdminProductsList();
+    loadProductsForUsers();
+    
+    showNotification('✅ Produit ajouté avec succès !', 'success');
+}
+
+function deleteProduct(productId) {
+    if (!isAdminAuthenticated) {
+        showNotification('❌ Veuillez vous authentifier pour supprimer des produits.', 'error');
+        showAdminAccess();
+        return;
+    }
+    
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')) {
+        products = products.filter(product => product.id !== productId);
+        saveProducts();
+        updateAdminProductsList();
+        loadProductsForUsers();
+        showNotification('✅ Produit supprimé avec succès !', 'success');
+    }
+}
+
+function updateAdminProductsList() {
+    const productsList = document.getElementById('products-list');
+    const productsCount = document.getElementById('products-count');
+    
+    if (!productsList || !productsCount) return;
+    
+    productsCount.textContent = products.length;
+    productsList.innerHTML = '';
+    
+    if (products.length === 0) {
+        productsList.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">Aucun produit pour le moment.</p>';
+        return;
+    }
+    
+    // Grouper par catégorie
+    const categories = {};
+    products.forEach(product => {
+        if (!categories[product.category]) {
+            categories[product.category] = [];
         }
-
-        // Price Modal Functions
-        function openPriceModal() {
-            document.getElementById('priceModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePriceModal() {
-            document.getElementById('priceModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('priceModal');
-            if (event.target === modal) {
-                closePriceModal();
-            }
-        }
-
-        // Initialize portfolio videos
-        document.addEventListener('DOMContentLoaded', function() {
-            const videos = document.querySelectorAll('.portfolio-item video');
-            videos.forEach(video => {
-                video.addEventListener('mouseenter', function() {
-                    this.play();
-                });
-                video.addEventListener('mouseleave', function() {
-                    this.pause();
-                    this.currentTime = 0;
-                });
-            });
+        categories[product.category].push(product);
+    });
+    
+    // Afficher par catégorie
+    Object.keys(categories).forEach(category => {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'admin-category';
+        categoryDiv.style.marginBottom = '1.5rem';
+        
+        const categoryName = CONFIG.CATEGORIES[category] || `📋 ${category}`;
+        
+        categoryDiv.innerHTML = `<h4 style="color: var(--amethyst); margin-bottom: 0.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">${categoryName}</h4>`;
+        
+        categories[category].forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'admin-product-item';
+            productDiv.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 0.8rem; background: var(--cream); margin-bottom: 0.5rem; border-radius: 5px;';
+            productDiv.innerHTML = `
+                <div>
+                    <strong>${product.name}</strong> - <span style="color: var(--gold);">${product.price}</span>
+                </div>
+                <button onclick="deleteProduct(${product.id})" class="btn-delete" style="background: #ff4444; color: white; border: none; padding: 0.3rem 0.6rem; border-radius: 3px; cursor: pointer; font-size: 0.8rem;">
+                    🗑️
+                </button>
+            `;
+            categoryDiv.appendChild(productDiv);
         });
+        
+        productsList.appendChild(categoryDiv);
+    });
+}
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
+function loadProductsForUsers() {
+    const pricesTbody = document.getElementById('prices-tbody');
+    if (!pricesTbody) return;
+    
+    pricesTbody.innerHTML = '';
+    
+    // Trier les produits par catégorie pour un affichage organisé
+    const sortedProducts = [...products].sort((a, b) => {
+        const categoryOrder = { 'linge': 1, 'vaisselle': 2, 'decoration': 3, 'mobilier': 4, 'autre': 5 };
+        return (categoryOrder[a.category] || 99) - (categoryOrder[b.category] || 99);
+    });
+    
+    sortedProducts.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${product.name}</td>
+            <td>${product.price}</td>
+        `;
+        pricesTbody.appendChild(row);
+    });
+    
+    // Ajouter Chafindish (toujours présent)
+    const chafindishRow = document.createElement('tr');
+    chafindishRow.innerHTML = `
+        <td>Chafindish</td>
+        <td>2 000 F</td>
+    `;
+    pricesTbody.appendChild(chafindishRow);
+}
 
-        // Gérer le bouton de retour du navigateur
-        window.addEventListener('popstate', function(event) {
-            if (event.state && event.state.page) {
-                navigateTo(event.state.page);
-            }
-        });
+// =============================================
+// GESTION DU PORTFOLIO AVEC UPLOAD LOCAL
+// =============================================
 
-        // Amélioration du responsive pour mobile
-        function handleResize() {
-            const navLinks = document.getElementById('navLinks');
-            if (window.innerWidth > 768) {
-                navLinks.classList.remove('active');
-                // Réinitialiser l'animation du menu hamburger
-                const spans = document.querySelectorAll('.menu-toggle span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+function addPortfolioImage(event) {
+    event.preventDefault();
+    
+    if (!isAdminAuthenticated) {
+        showNotification('❌ Veuillez vous authentifier pour ajouter des images.', 'error');
+        showAdminAccess();
+        return;
+    }
+    
+    const fileInput = document.getElementById('portfolio-image-file');
+    const title = document.getElementById('portfolio-image-title').value.trim();
+    const description = document.getElementById('portfolio-image-description').value.trim();
+    const category = document.getElementById('portfolio-image-category').value;
+    
+    // Validation
+    if (!fileInput.files.length || !title) {
+        showNotification('❌ Veuillez sélectionner une image et remplir le titre.', 'error');
+        return;
+    }
+    
+    const file = fileInput.files[0];
+    
+    // Vérifier la taille du fichier (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+        showNotification('❌ L\'image est trop volumineuse. Maximum 5MB.', 'error');
+        return;
+    }
+    
+    // Convertir l'image en base64
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const portfolioImage = {
+            id: Date.now(),
+            imageData: e.target.result, // Stocker les données base64
+            title: title,
+            description: description,
+            category: category,
+            fileName: file.name
+        };
+        
+        portfolioImages.push(portfolioImage);
+        savePortfolio();
+        
+        // Réinitialiser le formulaire
+        document.getElementById('portfolio-form').reset();
+        resetPortfolioPreview();
+        
+        // Mettre à jour les affichages
+        updateAdminPortfolioList();
+        
+        // Recharger le portfolio si on est sur la page portfolio
+        if (document.getElementById('page-portfolio').classList.contains('active')) {
+            loadPortfolioImages();
         }
+        
+        showNotification('✅ Image ajoutée au portfolio avec succès !', 'success');
+    };
+    
+    reader.onerror = function() {
+        showNotification('❌ Erreur lors de la lecture du fichier.', 'error');
+    };
+    
+    reader.readAsDataURL(file);
+}
 
-        window.addEventListener('resize', handleResize);
-    </script>
+function deletePortfolioImage(imageId) {
+    if (!isAdminAuthenticated) {
+        showNotification('❌ Veuillez vous authentifier pour supprimer des images.', 'error');
+        showAdminAccess();
+        return;
+    }
+    
+    if (confirm('Êtes-vous sûr de vouloir supprimer cette image du portfolio ?')) {
+        portfolioImages = portfolioImages.filter(image => image.id !== imageId);
+        savePortfolio();
+        updateAdminPortfolioList();
+        
+        // Recharger le portfolio si on est sur la page portfolio
+        if (document.getElementById('page-portfolio').classList.contains('active')) {
+            loadPortfolioImages();
+        }
+        
+        showNotification('✅ Image supprimée du portfolio avec succès !', 'success');
+    }
+}
+
+function updateAdminPortfolioList() {
+    const portfolioList = document.getElementById('portfolio-list');
+    const portfolioCount = document.getElementById('portfolio-count');
+    
+    if (!portfolioList || !portfolioCount) return;
+    
+    portfolioCount.textContent = portfolioImages.length;
+    portfolioList.innerHTML = '';
+    
+    if (portfolioImages.length === 0) {
+        portfolioList.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">Aucune image dans le portfolio.</p>';
+        return;
+    }
+    
+    portfolioImages.forEach(image => {
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'admin-portfolio-item';
+        imageDiv.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--cream); margin-bottom: 0.8rem; border-radius: 8px;';
+        imageDiv.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <img src="${image.imageData}" alt="${image.title}" class="portfolio-image-preview">
+                <div>
+                    <strong>${image.title}</strong>
+                    <div style="color: #666; font-size: 0.9rem;">${image.description}</div>
+                    <div style="color: var(--gold); font-size: 0.8rem;">Catégorie: ${image.category}</div>
+                    <div style="color: #888; font-size: 0.7rem;">${image.fileName}</div>
+                </div>
+            </div>
+            <button onclick="deletePortfolioImage(${image.id})" class="btn-delete" style="background: #ff4444; color: white; border: none; padding: 0.3rem 0.6rem; border-radius: 3px; cursor: pointer; font-size: 0.8rem;">
+                🗑️
+            </button>
+        `;
+        portfolioList.appendChild(imageDiv);
+    });
+}
+
+function loadPortfolioImages() {
+    const portfolioContainer = document.querySelector('.portfolio-container');
+    if (!portfolioContainer) return;
+    
+    // NE PAS VIDER le conteneur existant - garder les images HTML originales
+    // Les images uploadées seront ajoutées à la fin
+    
+    // Ajouter les images uploadées à la fin des images existantes
+    portfolioImages.forEach(image => {
+        // Vérifier si cette image n'existe pas déjà
+        const existingImages = portfolioContainer.querySelectorAll('.portfolio-item');
+        let imageExists = false;
+        
+        existingImages.forEach(existingItem => {
+            const img = existingItem.querySelector('img');
+            if (img && img.src === image.imageData) {
+                imageExists = true;
+            }
+        });
+        
+        if (!imageExists) {
+            const portfolioItem = document.createElement('div');
+            portfolioItem.className = 'portfolio-item';
+            portfolioItem.setAttribute('data-category', image.category);
+            portfolioItem.innerHTML = `
+                <img src="${image.imageData}" alt="${image.title}" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h4>${image.title}</h4>
+                    <p>${image.description}</p>
+                </div>
+            `;
+            portfolioContainer.appendChild(portfolioItem);
+        }
+    });
+    
+    // Réappliquer les événements de filtrage
+    setupPortfolioFilters();
+}
+
+function setupPortfolioFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        // Supprimer les anciens événements
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+    });
+    
+    // Réattacher les événements
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const onclickAttr = this.getAttribute('onclick');
+            if (onclickAttr) {
+                const category = onclickAttr.match(/'([^']+)'/)[1];
+                filterPortfolio(category);
+            }
+        });
+    });
+}
+
+function filterPortfolio(category) {
+    const items = document.querySelectorAll('.portfolio-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Mettre à jour le bouton actif avec animation
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.transform = 'scale(0.95)';
+    });
+    event.target.classList.add('active');
+    event.target.style.transform = 'scale(1)';
+    
+    // Animation de transition des éléments
+    items.forEach((item, index) => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+            }, index * 50);
+        } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                item.style.display = 'none';
+            }, 300);
+        }
+    });
+}
+
+function updatePortfolioPreview(event) {
+    const fileInput = event.target;
+    const preview = document.getElementById('portfolio-image-preview');
+    const noPreview = document.getElementById('portfolio-no-preview');
+    
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+            noPreview.style.display = 'none';
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        preview.style.display = 'none';
+        noPreview.style.display = 'block';
+    }
+}
+
+function resetPortfolioPreview() {
+    const preview = document.getElementById('portfolio-image-preview');
+    const noPreview = document.getElementById('portfolio-no-preview');
+    const fileInput = document.getElementById('portfolio-image-file');
+    
+    fileInput.value = '';
+    preview.style.display = 'none';
+    noPreview.style.display = 'block';
+}
+
+// =============================================
+// FONCTIONS DE NAVIGATION ET GESTION DES PAGES
+// =============================================
+
+function navigateTo(page) {
+    // Masquer toutes les pages
+    document.querySelectorAll('.page-container').forEach(container => {
+        container.classList.remove('active');
+    });
+    
+    // Afficher la page demandée
+    const targetPage = document.getElementById(`page-${page}`);
+    if (targetPage) {
+        targetPage.classList.add('active');
+    }
+    
+    // Mettre à jour la navigation active
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === page) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Fermer le menu mobile si ouvert
+    closeMenu();
+    
+    // Remonter en haut de la page
+    window.scrollTo(0, 0);
+    
+    // Mettre à jour l'URL
+    history.pushState({page}, '', `#${page}`);
+    
+    // Actions spécifiques selon la page
+    if (page === 'portfolio') {
+        // Charger le portfolio dynamique seulement quand on visite la page portfolio
+        setTimeout(loadPortfolioImages, 100);
+    }
+    
+    if (page === 'admin' && isAdminAuthenticated) {
+        updateAdminProductsList();
+        updateAdminPortfolioList();
+    }
+}
+
+// =============================================
+// GESTION DU MENU MOBILE
+// =============================================
+
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+    
+    // Animation des barres du menu hamburger
+    const spans = document.querySelectorAll('.menu-toggle span');
+    if (navLinks.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+}
+
+function closeMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.remove('active');
+    
+    // Réinitialiser l'animation du menu hamburger
+    const spans = document.querySelectorAll('.menu-toggle span');
+    spans[0].style.transform = 'none';
+    spans[1].style.opacity = '1';
+    spans[2].style.transform = 'none';
+}
+
+// =============================================
+// GESTION DES MODALES
+// =============================================
+
+function openPriceModal() {
+    document.getElementById('priceModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    // Charger les produits dans la modal
+    setTimeout(loadProductsForUsers, 100);
+}
+
+function closePriceModal() {
+    document.getElementById('priceModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// =============================================
+// FONCTIONS UTILITAIRES
+// =============================================
+
+function saveProducts() {
+    localStorage.setItem(CONFIG.STORAGE_KEYS.PRODUCTS, JSON.stringify(products));
+}
+
+function savePortfolio() {
+    localStorage.setItem(CONFIG.STORAGE_KEYS.PORTFOLIO, JSON.stringify(portfolioImages));
+}
+
+function showNotification(message, type = 'info') {
+    // Créer une notification temporaire
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        z-index: 10000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+    `;
+    
+    if (type === 'success') {
+        notification.style.background = '#4CAF50';
+    } else if (type === 'error') {
+        notification.style.background = '#f44336';
+    } else {
+        notification.style.background = '#2196F3';
+    }
+    
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    // Supprimer après 3 secondes
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+function handleScroll() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+    } else {
+        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+    }
+}
+
+function handlePopState(event) {
+    if (event.state && event.state.page) {
+        navigateTo(event.state.page);
+    }
+}
+
+function handleResize() {
+    const navLinks = document.getElementById('navLinks');
+    if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+        // Réinitialiser l'animation du menu hamburger
+        const spans = document.querySelectorAll('.menu-toggle span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+}
+
+// =============================================
+// INITIALISATION AU CHARGEMENT
+// =============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeApp();
+    
+    // Fermer les modales en cliquant à l'extérieur
+    window.onclick = function(event) {
+        const priceModal = document.getElementById('priceModal');
+        if (event.target === priceModal) {
+            closePriceModal();
+        }
+        
+        const adminModal = document.getElementById('adminAccessModal');
+        if (event.target === adminModal) {
+            adminModal.style.display = 'none';
+        }
+    };
+});
+
+// =============================================
+// EXPOSITION DES FONCTIONS GLOBALES
+// =============================================
+
+// Exposer les fonctions nécessaires globalement
+window.toggleMenu = toggleMenu;
+window.closeMenu = closeMenu;
+window.navigateTo = navigateTo;
+window.filterPortfolio = filterPortfolio;
+window.openPriceModal = openPriceModal;
+window.closePriceModal = closePriceModal;
+window.showAdminAccess = showAdminAccess;
+window.checkAdminAccess = checkAdminAccess;
+window.logoutAdmin = logoutAdmin;
+window.addProduct = addProduct;
+window.addPortfolioImage = addPortfolioImage;
+window.deleteProduct = deleteProduct;
+window.deletePortfolioImage = deletePortfolioImage;
+window.updatePortfolioPreview = updatePortfolioPreview;
+</script>
 </body>
 </html>
